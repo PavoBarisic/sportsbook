@@ -1,9 +1,6 @@
-README.md — kreiraj u root folderu projekta:
-markdown
-
 # Sportsbook API
 
-REST API za sportsko klađenje izrađen u Java Spring Boot-u.
+REST API for sports betting built with Java Spring Boot.
 
 ## Tech Stack
 
@@ -17,81 +14,79 @@ REST API za sportsko klađenje izrađen u Java Spring Boot-u.
 - Lombok
 - Maven
 
-## Pokretanje
+## Getting Started
 
-### 1. Pokreni bazu podataka
+### 1. Start the database
 
 ```bash
 docker compose up -d
 ```
 
-### 2. Pokreni aplikaciju
+### 2. Run the application
 
-Pokreni kroz IntelliJ IDEA ili:
+Run through IntelliJ IDEA or:
 
 ```bash
 ./mvnw spring-boot:run
 ```
 
 ### 3. Swagger UI
-
 http://localhost:8082/swagger-ui/index.html
 
+## Authentication
 
-## Autentikacija
+The API uses JWT token authentication.
 
-API koristi JWT token autentikaciju.
+1. Register at `POST /auth/register`
+2. Login at `POST /auth/login`
+3. Copy the token from the response
+4. Click **Authorize** in Swagger UI and enter the token
 
-1. Registriraj se na `POST /auth/register`
-2. Prijavi se na `POST /auth/login`
-3. Kopiraj token iz odgovora
-4. Klikni **Authorize** u Swagger UI i unesi token
+## Roles
 
-## Role
+| Role | Description |
+|------|-------------|
+| USER | View events, place tickets, view own tickets |
+| ADMIN | Everything USER can do + manage events, set results, view all tickets |
 
-| Rola | Opis |
-|------|------|
-| USER | Pregled događaja, postavljanje tiketa, pregled vlastitih tiketa |
-| ADMIN | Sve što USER može + upravljanje događajima, postavljanje rezultata, pregled svih tiketa |
-
-> Da bi korisnik bio ADMIN, potrebno je ručno promijeniti rolu u bazi:
+> To make a user ADMIN, manually update the role in the database:
 > ```sql
-> UPDATE korisnik SET rola = 'ADMIN' WHERE email = 'tvoj@email.com';
+> UPDATE korisnik SET rola = 'ADMIN' WHERE email = 'your@email.com';
 > ```
 
-## Endpointi
+## Endpoints
 
 ### Auth
-| Metoda | Putanja | Pristup | Opis |
-|--------|---------|---------|------|
-| POST | /auth/register | Javno | Registracija (dobiva 1000.00 KM) |
-| POST | /auth/login | Javno | Login, vraća JWT token |
+| Method | Path | Access | Description |
+|--------|------|--------|-------------|
+| POST | /auth/register | Public | Register (receives 1000.00 on account) |
+| POST | /auth/login | Public | Login, returns JWT token |
 
-### Događaji
-| Metoda | Putanja | Pristup | Opis |
-|--------|---------|---------|------|
-| GET | /api/dogadaji | USER, ADMIN | Svi događaji (filter: ?sport=, ?status=) |
-| GET | /api/dogadaji/{id} | USER, ADMIN | Jedan događaj |
-| POST | /api/dogadaji | ADMIN | Kreiraj događaj |
-| PUT | /api/dogadaji/{id} | ADMIN | Ažuriraj događaj |
-| PUT | /api/dogadaji/{id}/rezultat | ADMIN | Postavi rezultat i razriješi tikete |
-| DELETE | /api/dogadaji/{id} | ADMIN | Obriši događaj |
+### Events
+| Method | Path | Access | Description |
+|--------|------|--------|-------------|
+| GET | /api/dogadaji | USER, ADMIN | All events (filter: ?sport=, ?status=) |
+| GET | /api/dogadaji/{id} | USER, ADMIN | Single event |
+| POST | /api/dogadaji | ADMIN | Create event |
+| PUT | /api/dogadaji/{id} | ADMIN | Update event |
+| PUT | /api/dogadaji/{id}/rezultat | ADMIN | Set result and resolve tickets |
+| DELETE | /api/dogadaji/{id} | ADMIN | Delete event |
 
-### Tiketi
-| Metoda | Putanja | Pristup | Opis |
-|--------|---------|---------|------|
-| POST | /api/tiketi | USER, ADMIN | Postavi tiket |
-| GET | /api/tiketi | USER, ADMIN | Moji tiketi |
-| GET | /api/tiketi/{id} | USER, ADMIN | Jedan tiket |
-| GET | /api/tiketi/sve | ADMIN | Svi tiketi |
+### Tickets
+| Method | Path | Access | Description |
+|--------|------|--------|-------------|
+| POST | /api/tiketi | USER, ADMIN | Place a ticket |
+| GET | /api/tiketi | USER, ADMIN | My tickets |
+| GET | /api/tiketi/{id} | USER, ADMIN | Single ticket |
+| GET | /api/tiketi/sve | ADMIN | All tickets |
 
-### Korisnici
-| Metoda | Putanja | Pristup | Opis |
-|--------|---------|---------|------|
-| GET | /api/korisnici/me | USER, ADMIN | Moj profil i stanje računa |
-| GET | /api/korisnici | ADMIN | Svi korisnici |
+### Users
+| Method | Path | Access | Description |
+|--------|------|--------|-------------|
+| GET | /api/korisnici/me | USER, ADMIN | My profile and account balance |
+| GET | /api/korisnici | ADMIN | All users |
 
-## Primjer postavljanja tiketa
+## Ticket Example
 
 ```json
 POST /api/tiketi
@@ -106,4 +101,4 @@ POST /api/tiketi
 
 ## Docker
 
-PostgreSQL baza radi na portu `5433`, aplikacija na portu `8082`.
+PostgreSQL runs on port `5433`, application runs on port `8082`.
