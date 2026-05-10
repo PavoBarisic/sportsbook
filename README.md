@@ -1,5 +1,5 @@
 # Sportsbook API
-
+![Build](https://github.com/PavoBarisic/sportsbook/actions/workflows/build.yml/badge.svg)
 REST API for sports betting built with Java Spring Boot.
 
 ## Tech Stack
