@@ -1,4 +1,6 @@
 /mvnw text eol=lf
 *.cmd text eol=crlf
 
-frontend/** linguist-detectable=false
+frontend/src/**/*.vue linguist-detectable=true
+frontend/src/**/*.js linguist-detectable=true
+frontend/src/**/*.ts linguist-detectable=true
