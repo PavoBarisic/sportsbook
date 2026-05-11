@@ -1,5 +1,6 @@
 services:
   db:
+    container_name: sportsbook-db
     image: postgres:16
     environment:
       POSTGRES_DB: sportsbook
