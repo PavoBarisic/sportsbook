@@ -44,11 +44,13 @@ Sportsbook is a full-stack web application that simulates a sports betting platf
 - View all registered users
 
 ## Project Structure
+
+```
 sportsbook/
 ├── .github/
 │   └── workflows/
-│       └── build.yml        ← CI/CD pipeline
-├── src/                     ← Spring Boot backend
+│       └── build.yml
+├── src/
 │   └── main/java/com/pavobarisic/sportsbook/
 │       ├── controller/
 │       ├── service/
@@ -57,7 +59,7 @@ sportsbook/
 │       ├── dto/
 │       ├── security/
 │       └── exception/
-├── frontend/                ← Vue.js frontend
+├── frontend/
 │   └── src/
 │       ├── views/
 │       ├── components/
@@ -67,6 +69,7 @@ sportsbook/
 ├── screenshots/
 ├── docker-compose.yml
 └── README.md
+```
 
 ## Getting Started
 
