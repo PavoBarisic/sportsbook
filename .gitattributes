@@ -1,2 +1,5 @@
 /mvnw text eol=lf
 *.cmd text eol=crlf
+
+*.vue linguist-language=Java
+frontend/src/** linguist-vendored
