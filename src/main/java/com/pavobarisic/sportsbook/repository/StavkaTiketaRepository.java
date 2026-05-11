@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface StavkaTiketaRepository extends JpaRepository<StavkaTiketa, Long> {
+    void deleteByDogadajId(Long dogadajId);
 }

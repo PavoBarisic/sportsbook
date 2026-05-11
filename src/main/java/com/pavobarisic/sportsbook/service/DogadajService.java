@@ -1,20 +1,20 @@
 package com.pavobarisic.sportsbook.service;
-
 import com.pavobarisic.sportsbook.exception.ResourceNotFoundException;
 import com.pavobarisic.sportsbook.model.Dogadaj;
 import com.pavobarisic.sportsbook.model.DogadajStatus;
 import com.pavobarisic.sportsbook.model.Sport;
 import com.pavobarisic.sportsbook.repository.DogadajRepository;
+import com.pavobarisic.sportsbook.repository.StavkaTiketaRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
+import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Service
 @RequiredArgsConstructor
 public class DogadajService {
-
     private final DogadajRepository dogadajRepository;
+    private final StavkaTiketaRepository stavkaTiketaRepository;
 
     public List<Dogadaj> dajSve() {
         return dogadajRepository.findAll();
@@ -54,8 +54,10 @@ public class DogadajService {
         return dogadajRepository.save(postojeci);
     }
 
+    @Transactional
     public void obrisi(Long id) {
         dajById(id);
+        stavkaTiketaRepository.deleteByDogadajId(id);
         dogadajRepository.deleteById(id);
     }
 }
