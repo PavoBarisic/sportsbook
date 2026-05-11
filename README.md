@@ -194,3 +194,4 @@ GitHub Actions pipeline runs on every push to master:
 - Cache Maven dependencies
 - Build with Maven
 - Run tests against PostgreSQL service container
+
