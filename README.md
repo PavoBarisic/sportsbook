@@ -1,4 +1,4 @@
-# Sportsbook
+# SportsBook
 
 Full-stack sports betting application built with Java Spring Boot and Vue.js.
 
