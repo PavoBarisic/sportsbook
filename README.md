@@ -219,12 +219,26 @@ GitHub Actions pipeline runs on every push to master:
 
 ## Screenshots
 
+### Login
 ![Login](screenshots/login.png)
-![Events](screenshots/events.png)
-![Place Ticket](screenshots/place-ticket.png)
-![My Tickets](screenshots/my-tickets.png)
-![Admin Events](screenshots/admin-events.png)
-![Admin Result](screenshots/admin-result.png)
-![Profile](screenshots/profile.png)
-![Admin Users](screenshots/admin-users.png)
 
+### Events
+![Events](screenshots/events.png)
+
+### Place Ticket
+![Place Ticket](screenshots/place-ticket.png)
+
+### My Tickets
+![My Tickets](screenshots/my-tickets.png)
+
+### Admin - Events
+![Admin Events](screenshots/admin-events.png)
+
+### Admin - Set Result
+![Admin Result](screenshots/admin-result.png)
+
+### Profile
+![Profile](screenshots/profile.png)
+
+### Admin - Users
+![Admin Users](screenshots/admin-users.png)
