@@ -19,6 +19,7 @@ Sportsbook is a full-stack web application that simulates a sports betting platf
 - Docker & Docker Compose
 - Swagger / OpenAPI
 - Maven
+- JUnit 5 + Mockito (unit testing)
 - GitHub Actions (CI/CD)
 
 **Frontend**
