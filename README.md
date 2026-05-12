@@ -231,14 +231,14 @@ GitHub Actions pipeline runs on every push to master:
 ### My Tickets
 ![My Tickets](screenshots/my-tickets.png)
 
+### Profile
+![Profile](screenshots/profil.png)
+
 ### Admin - Events
 ![Admin Events](screenshots/admin-events.png)
 
 ### Admin - Set Result
 ![Admin Result](screenshots/admin-result.png)
-
-### Profile
-![Profile](screenshots/profil.png)
 
 ### Admin - Users
 ![Admin Users](screenshots/admin-users.png)
