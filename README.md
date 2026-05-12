@@ -186,6 +186,25 @@ UPDATE korisnik SET rola = 'ADMIN' WHERE email = 'your@email.com';
 7. A ticket is **lost** if any single selection is wrong
 8. Winnings are added to account balance automatically
 
+## Testing
+
+Unit tests written with JUnit 5 and Mockito covering all service layers.
+
+| Service | Tests |
+|---------|-------|
+| AuthService | register (email taken, new email), login (not found, wrong password, success) |
+| KorisnikService | get all, get by email (exists, not found) |
+| DogadajService | get all, get by id (exists, not found), update, delete (exists, not found) |
+| TiketService | place ticket (user not found, insufficient funds, event not upcoming, success), get by id (exists, not found) |
+
+Run tests:
+
+```bash
+./mvnw test
+```
+
+Total: **21 tests, 0 failures**
+
 ## CI/CD
 
 GitHub Actions pipeline runs on every push to master:
