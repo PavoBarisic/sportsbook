@@ -238,7 +238,7 @@ GitHub Actions pipeline runs on every push to master:
 ![Admin Result](screenshots/admin-result.png)
 
 ### Profile
-![Profile](screenshots/profile.png)
+![Profile](screenshots/profil.png)
 
 ### Admin - Users
 ![Admin Users](screenshots/admin-users.png)
