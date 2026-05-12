@@ -8,6 +8,8 @@ Full-stack sports betting application built with Java Spring Boot and Vue.js.
 
 Sportsbook is a full-stack web application that simulates a sports betting platform. Users can browse sporting events with odds, place tickets, and track their balance. Administrators can manage events, set results, and oversee all tickets and users.
 
+See [screenshots](#screenshots) below.
+
 ## Tech Stack
 
 **Backend**
@@ -214,4 +216,15 @@ GitHub Actions pipeline runs on every push to master:
 - Cache Maven dependencies
 - Build with Maven
 - Run tests against PostgreSQL service container
+
+## Screenshots
+
+![Login](screenshots/login.png)
+![Events](screenshots/events.png)
+![Place Ticket](screenshots/place-ticket.png)
+![My Tickets](screenshots/my-tickets.png)
+![Admin Events](screenshots/admin-events.png)
+![Admin Result](screenshots/admin-result.png)
+![Profile](screenshots/profile.png)
+![Admin Users](screenshots/admin-users.png)
 
