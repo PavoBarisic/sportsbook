@@ -21,6 +21,7 @@ See [screenshots](#screenshots) below.
 - Docker & Docker Compose
 - Swagger / OpenAPI
 - Maven
+- Lombok
 - JUnit 5 + Mockito (unit testing)
 - GitHub Actions (CI/CD)
 
